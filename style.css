@@ -1,0 +1,144 @@
+/* --- KA'S PREMIUM GOLD-BLACK GALLERY --- */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700;800&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: #000000; /* Pure Black Background */
+    color: #ffffff;
+    overflow-x: hidden;
+}
+
+/* --- HEADER & LOGO --- */
+header {
+    background: rgba(0, 0, 0, 0.9);
+    padding: 30px 20px;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #d4af37; /* Gold Border */
+    text-align: center;
+}
+
+.logo {
+    font-size: 36px;
+    font-weight: 800;
+    letter-spacing: 2px;
+    margin-bottom: 20px;
+    background: linear-gradient(to right, #bf953f, #fcf6ba, #b38728, #fbf5b7, #aa771c);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-transform: uppercase;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #d4af37; /* Gold Text */
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    padding: 8px 15px;
+    border: 1px solid transparent;
+    transition: 0.3s ease;
+    border-radius: 5px;
+}
+
+nav ul li a:hover {
+    border-color: #d4af37;
+    background: rgba(212, 175, 55, 0.1);
+    box-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+}
+
+/* --- MAIN CONTENT & TITLES --- */
+main {
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 0 20px;
+}
+
+section {
+    margin-bottom: 80px;
+}
+
+section h2 {
+    font-size: 28px;
+    color: #d4af37;
+    margin-bottom: 30px;
+    text-align: center;
+    position: relative;
+}
+
+section h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background: #d4af37;
+    margin: 10px auto;
+}
+
+/* --- PINTEREST MASONRY LAYOUT --- */
+.gallery-container {
+    columns: 4 300px; /* 4 Columns, min 300px wide */
+    column-gap: 20px;
+}
+
+.gallery-container img {
+    width: 100%;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    border: 2px solid #1a1a1a;
+    display: block;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    cursor: pointer;
+}
+
+/* HOVER GLOW EFFECT */
+.gallery-container img:hover {
+    transform: scale(1.03);
+    border-color: #d4af37;
+    box-shadow: 0 0 20px rgba(212, 175, 55, 0.6);
+    filter: brightness(1.1);
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 40px;
+    background: #0a0a0a;
+    border-top: 1px solid #d4af37;
+    color: #d4af37;
+}
+
+/* --- IMAGE CLICK PE BADA HONA (MODAL EFFECT) --- */
+/* Tip: HTML mein images ko link ke andar daalne se ye effect aur bhi smooth hoga, 
+lekin abhi ke liye maine basic styling rakhi hai */
+
+@media (max-width: 768px) {
+    .gallery-container {
+        columns: 2 200px;
+    }
+    .logo { font-size: 24px; }
+}
+
+@media (max-width: 480px) {
+    .gallery-container {
+        columns: 1;
+    }
+}
